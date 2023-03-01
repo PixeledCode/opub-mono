@@ -1,0 +1,140 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+
+  input,
+  textarea {
+    border: 1px solid var(--color-gray-02);
+    border-radius: var(--radius-small);
+    background-color: var(--color-background-light);
+    letter-spacing: var(--letter-spacing-dense);
+    font-weight: var(--font-normal);
+    padding: 0 16px;
+
+    &:hover {
+      border-color: var(--color-gray-03);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--color-primary-01);
+      border-color: transparent;
+    }
+  }
+
+  input {
+    height: 46px;
+  }
+
+  textarea {
+    // min-height: 64px;
+    padding: 8px 16px;
+    resize: none;
+    overflow: auto;
+  }
+
+  &--invalid {
+    input,
+    textarea {
+      border-color: var(--color-error);
+
+      &:hover {
+        border-color: var(--color-error);
+      }
+
+      &:focus-visible {
+        outline: none;
+        border-color: var(--color-error);
+      }
+    }
+  }
+
+  &--valid {
+    input,
+    textarea {
+      border-color: var(--color-success);
+
+      &:hover {
+        border-color: var(--color-success);
+      }
+
+      &:focus-visible {
+        outline: none;
+        border-color: var(--color-success);
+      }
+    }
+  }
+
+  &--disabled {
+    input,
+    textarea {
+      background-color: var(--color-gray-02);
+      &:hover {
+        border-color: var(--color-gray-02);
+      }
+    }
+  }
+
+  &--fluid {
+    input,
+    textarea {
+      width: 100%;
+      width: -moz-available;
+      width: -webkit-fill-available;
+      width: fill-available;
+    }
+  }
+
+  &__iconStart {
+    > div {
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 15px;
+        left: 16px;
+      }
+    }
+
+    input,
+    textarea {
+      padding-left: 50px;
+    }
+  }
+
+  &__iconEnd {
+    > div {
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 15px;
+        right: 16px;
+      }
+    }
+
+    input,
+    textarea {
+      padding-right: 50px;
+    }
+  }
+}
+
+.indicator {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--text-light);
+  font-weight: var(--font-normal);
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-medium);
+}
+
+.error {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-error);
+}
